@@ -5,6 +5,8 @@ from rest_framework.response import Response
 
 from rest_framework.decorators import api_view
 
+from sampleapi.tasks import send_feedback_email_task
+
 
 
 # Create your views here.
@@ -13,4 +15,5 @@ from rest_framework.decorators import api_view
 
 def getData(request):
 
+    send_feedback_email_task.delay("nitinpai@someexample.com")
     return Response()
