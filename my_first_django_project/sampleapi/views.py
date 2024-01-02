@@ -16,8 +16,8 @@ from .celery import app as celery_app
 @api_view(['GET'])
 
 def getData(request):
-    send_email.delay("nitin@sampleemail.com")
-    return Response()
+    result = send_email.delay("nitin@sampleemail.com")
+    return Response(result.task_id)
 
 @api_view(['GET'])
 def check_task_status(request, task_id):

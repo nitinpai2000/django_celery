@@ -4,4 +4,4 @@
 CELERY_IMPORTS = ("django_celery.tasks", )
 # Celery settings
 CELERY_BROKER_URL = 'amqp://guest:guest@localhost:5672/'
-CELERY_RESULT_BACKEND = 'rpc://'
+CELERY_RESULT_BACKEND = "db+sqlite:///db1.sqlite3"

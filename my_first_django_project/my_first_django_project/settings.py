@@ -125,4 +125,4 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-CELERY_RESULT_BACKEND = "rpc://"
+CELERY_RESULT_BACKEND = "db+sqlite:///db1.sqlite3"
