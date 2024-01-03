@@ -4,5 +4,5 @@ from . import views
 
 urlpatterns = [
     path('', views.getData),
-      path('<str:task_id>/', views.check_task_status, name='check_task_status'),
+      path('taskstatus/<str:task_id>/', views.check_task_status, name='check_task_status'),
 ]

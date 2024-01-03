@@ -23,4 +23,4 @@ def getData(request):
 def check_task_status(request, task_id):
     # Check the status of the Celery task    
     response = celery_app.AsyncResult(task_id)    
-    return Response(response.state)
+    return Response({"status":response.state, "result": response.result})
